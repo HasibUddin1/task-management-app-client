@@ -17,7 +17,7 @@ const SingleDoingTask = ({ singleDoingTask, allDoingTasks, setAllDoingTasks, all
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/deleteTask/${id}`, {
+                fetch(`https://task-management-app-server-snowy.vercel.app/deleteTask/${id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())

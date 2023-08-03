@@ -9,7 +9,7 @@ const Archived = () => {
     const [allArchivedTasks, setAllArchivedTasks] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:5000/allArchivedTasks')
+        fetch('https://task-management-app-server-snowy.vercel.app/allArchivedTasks')
             .then(res => res.json())
             .then(data => setAllArchivedTasks(data))
     }, [])

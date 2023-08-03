@@ -9,7 +9,7 @@ const Doing = () => {
     const [allDoingTasks, setAllDoingTasks] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:5000/allDoingTasks')
+        fetch('https://task-management-app-server-snowy.vercel.app/allDoingTasks')
             .then(res => res.json())
             .then(data => setAllDoingTasks(data))
     }, [])

@@ -9,7 +9,7 @@ const OnHold = () => {
     const [allOnHoldTasks, setAllOnHoldTasks] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:5000/allOnHoldTasks')
+        fetch('https://task-management-app-server-snowy.vercel.app/allOnHoldTasks')
             .then(res => res.json())
             .then(data => setAllOnHoldTasks(data))
     }, [])

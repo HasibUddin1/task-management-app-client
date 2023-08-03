@@ -10,7 +10,7 @@ const UpdateATask = () => {
     const [selectedTask, setSelectedTask] = useState({})
 
     useEffect(() => {
-        fetch(`http://localhost:5000/getSingleTask/${id}`)
+        fetch(`https://task-management-app-server-snowy.vercel.app/getSingleTask/${id}`)
             .then(res => res.json())
             .then(data => setSelectedTask(data))
     }, [id])
@@ -28,7 +28,7 @@ const UpdateATask = () => {
             taskStatus,
             taskDescription
         }
-        fetch(`http://localhost:5000/updateATask/${id}`, {
+        fetch(`https://task-management-app-server-snowy.vercel.app/updateATask/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

@@ -35,7 +35,7 @@ const AddTask = () => {
             taskDescription
         }
 
-        fetch('http://localhost:5000/allTasks', {
+        fetch('https://task-management-app-server-snowy.vercel.app/allTasks', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
