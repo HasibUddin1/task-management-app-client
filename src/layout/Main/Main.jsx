@@ -4,11 +4,11 @@ import { Outlet } from "react-router-dom";
 
 const Main = () => {
     return (
-        <div className="lg:flex">
-            <div className="lg:w-[15%]">
+        <div className="xl:flex">
+            <div className="xl:w-[15%]">
                 <NavigationBar></NavigationBar>
             </div>
-            <div className="lg:w-[85%]">
+            <div className="xl:w-[85%]">
                 <Outlet></Outlet>
             </div>
         </div>

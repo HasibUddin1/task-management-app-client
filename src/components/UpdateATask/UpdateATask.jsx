@@ -50,14 +50,14 @@ const UpdateATask = () => {
     }
 
     return (
-        <div className="p-5 lg:p-20 bg-slate-300 h-screen">
+        <div className="p-5 xl:p-20 bg-slate-300 h-screen">
             <form onSubmit={handleUpdateTask}>
-                <div className="lg:flex gap-10">
-                    <div className="lg:w-1/2">
+                <div className="xl:flex gap-10">
+                    <div className="xl:w-1/2">
                         <label className="text-xl font-semibold" htmlFor="taskTitle">Task Title</label>
                         <input defaultValue={selectedTask?.taskTitle} className="w-full px-4 py-2 rounded-lg block mt-2" type="text" name="taskTitle" id="taskTitle" placeholder="Task Title" />
                     </div>
-                    <div className="lg:w-1/2">
+                    <div className="xl:w-1/2">
                         <label className="text-xl font-semibold" htmlFor="taskStatus">Task Status</label>
                         <select className="w-full px-4 py-2 rounded-lg block mt-2" name="taskStatus" id="taskStatus">
                             <option value="Doing">Doing</option>

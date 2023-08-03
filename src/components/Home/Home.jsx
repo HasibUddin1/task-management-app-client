@@ -22,9 +22,9 @@ const Home = () => {
     const allArchivedTasks = allTasks.filter(task => task.taskStatus === 'Archived')
 
     return (
-        <div className={allDoingTasks.length > 3 || allOnHoldTasks.length > 3 || allDoneTasks.length > 3 || allArchivedTasks.length > 3 ? 'lg:flex gap-10 px-10 pb-10 lg:bg-slate-200' : 'lg:flex gap-10 px-10 pb-10 h-screen lg:bg-slate-200'}>
+        <div className={allDoingTasks.length > 3 || allOnHoldTasks.length > 3 || allDoneTasks.length > 3 || allArchivedTasks.length > 3 ? 'lg:flex lg:flex-wrap xl:flex-nowrap gap-5 px-5 pb-10 xl:bg-slate-200' : 'lg:flex lg:flex-wrap xl:flex-nowrap gap-5 px-5 pb-10 h-screen xl:bg-slate-200'}>
             {/* All Doing Tasks Section */}
-            <div className="lg:w-1/4">
+            <div className="xl:w-1/4">
                 <h1 className="text-blue-500 font-bold text-2xl border-t-4 border-blue-500 text-center mt-10">Doing</h1>
                 <div className="flex flex-col items-center gap-10 mt-5 bg-slate-400 p-5 rounded-2xl">
                     {
@@ -38,7 +38,7 @@ const Home = () => {
                 </div>
             </div>
             {/* All On Hold Tasks Section */}
-            <div className="lg:w-1/4">
+            <div className="xl:w-1/4">
                 <h1 className="text-fuchsia-500 font-bold text-2xl border-t-4 border-fuchsia-500 text-center mt-10">On Hold</h1>
                 <div className="flex flex-col items-center gap-10 mt-5 bg-slate-400 p-5 rounded-2xl">
                     {
@@ -52,7 +52,7 @@ const Home = () => {
                 </div>
             </div>
             {/* All Done Tasks Section */}
-            <div className="lg:w-1/4">
+            <div className="xl:w-1/4">
                 <h1 className="text-green-500 font-bold text-2xl border-t-4 border-green-500 text-center mt-10">Done</h1>
                 <div className="flex flex-col items-center gap-10 mt-5 bg-slate-400 p-5 rounded-2xl">
                     {
@@ -66,7 +66,7 @@ const Home = () => {
                 </div>
             </div>
             {/* All Archived Tasks Section */}
-            <div className="lg:w-1/4">
+            <div className="xl:w-1/4">
                 <h1 className="text-orange-500 font-bold text-2xl border-t-4 border-orange-500 text-center mt-10"> Archived</h1>
                 <div className="flex flex-col items-center gap-10 mt-5 bg-slate-400 p-5 rounded-2xl">
                     {

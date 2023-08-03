@@ -15,9 +15,9 @@ const Archived = () => {
     }, [])
 
     return (
-        <div className={allArchivedTasks.length > 9 ? 'lg:bg-slate-200' : 'lg:bg-slate-200 h-screen'}>
+        <div className={allArchivedTasks.length > 9 ? 'xl:bg-slate-200' : 'xl:bg-slate-200 h-screen'}>
             {allArchivedTasks.length === 0 && <h1 className="text-4xl font-bold text-center text-orange-500 pt-10">You did not selected any archived task</h1>}
-            <div className="lg:w-9/12 mx-auto grid lg:grid-cols-3 py-10 gap-10 px-5 lg:px-0">
+            <div className="xl:w-9/12 mx-auto grid xl:grid-cols-3 py-10 gap-10 px-5 xl:px-0">
                 {
                     allArchivedTasks.map(singleArchivedTask => <SingleArchivedTask
                         key={singleArchivedTask._id}

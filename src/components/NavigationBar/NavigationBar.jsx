@@ -3,9 +3,9 @@ import { NavLink } from "react-router-dom";
 
 const NavigationBar = () => {
     return (
-        <div className="flex flex-col gap-5 font-bold text-xl bg-slate-200 lg:bg-white">
+        <div className="flex flex-col gap-5 font-bold text-xl bg-slate-200 xl:bg-white">
             <div className="p-2">
-                <div className="mb-10 bg-fuchsia-300 rounded-2xl p-5 flex items-center justify-between lg:justify-start gap-5">
+                <div className="mb-10 bg-fuchsia-300 rounded-2xl p-5 flex items-center justify-between xl:justify-start gap-5">
                     <p className="">Task Management</p>
                     <div className="w-[40px] h-[40px] bg-fuchsia-500 rounded-full">
                     </div>
