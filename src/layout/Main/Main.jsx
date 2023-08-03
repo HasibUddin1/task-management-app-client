@@ -5,10 +5,10 @@ import { Outlet } from "react-router-dom";
 const Main = () => {
     return (
         <div className="flex">
-            <div className="w-1/6">
+            <div className="w-[15%]">
                 <NavigationBar></NavigationBar>
             </div>
-            <div className="w-5/6">
+            <div className="w-[85%] bg-slate-200 h-screen">
                 <Outlet></Outlet>
             </div>
         </div>
