@@ -10,6 +10,8 @@ const UpdateATask = () => {
 
     const { id } = useParams()
 
+    const [error, setError] = useState('')
+
     const [selectedTask, setSelectedTask] = useState({})
 
     useEffect(() => {
@@ -25,6 +27,21 @@ const UpdateATask = () => {
         const taskTitle = form.taskTitle.value
         const taskStatus = form.taskStatus.value
         const taskDescription = form.taskDescription.value
+
+        if(!taskTitle){
+            setError('Task Title cannot be empty')
+            return
+        }
+
+        if(!taskStatus){
+            setError('Task Status cannot be empty')
+            return
+        }
+
+        if(!taskDescription){
+            setError('Task Description cannot be empty')
+            return
+        }
 
         const updatedTask = {
             taskTitle,
@@ -77,7 +94,7 @@ const UpdateATask = () => {
                 <div className="mt-5">
                     <input className="btn btn-success font-bold w-full" type="submit" value="Update Task" />
                 </div>
-                {/* {error && <p className="text-red-500 font-semibold">{error}</p>} */}
+                {error && <p className="text-red-500 font-semibold">{error}</p>}
             </form>
         </div>
     );
