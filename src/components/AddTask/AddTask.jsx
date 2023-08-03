@@ -1,6 +1,10 @@
+import { useState } from "react";
+import Swal from "sweetalert2";
 
 
 const AddTask = () => {
+
+    const [error, setError] = useState('')
 
     const handleAddTask = event => {
         event.preventDefault()
@@ -10,7 +14,45 @@ const AddTask = () => {
         const taskStatus = form.taskStatus.value
         const taskDescription = form.taskDescription.value
 
-        console.log(taskTitle, taskStatus, taskDescription)
+        if (!taskTitle) {
+            setError('Task Title cannot be empty')
+            return
+        }
+
+        if (!taskStatus) {
+            setError('Task Status cannot be empty')
+            return
+        }
+
+        if (!taskDescription) {
+            setError('Task Description cannot be empty')
+            return
+        }
+
+        const task = {
+            taskTitle,
+            taskStatus,
+            taskDescription
+        }
+
+        fetch('http://localhost:5000/allTasks', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(task)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.insertedId) {
+                    Swal.fire({
+                        title: 'Success',
+                        text: 'Your task has been added successfully',
+                        icon: 'success',
+                        confirmButtonText: 'Ok'
+                    })
+                }
+            })
     }
 
     return (
@@ -38,6 +80,7 @@ const AddTask = () => {
                 <div className="mt-5">
                     <input className="btn btn-success font-bold w-full" type="submit" value="Add Task" />
                 </div>
+                {error && <p className="text-red-500 font-semibold">{error}</p>}
             </form>
         </div>
     );
