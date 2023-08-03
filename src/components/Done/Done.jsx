@@ -1,9 +1,25 @@
+import { useEffect, useState } from "react";
+import SingleDoneTask from "../SingleDoneTask/SingleDoneTask";
 
 
 const Done = () => {
+
+    const [allDoneTasks, setAllDoneTasks] = useState([])
+
+    useEffect(() => {
+        fetch('http://localhost:5000/allDoneTasks')
+        .then(res => res.json())
+        .then(data => setAllDoneTasks(data))
+    }, [])
+
     return (
         <div className="w-9/12 mx-auto grid grid-cols-3 mt-10 gap-10">
-            <h1 className="text-center text-4xl">This is Done Component</h1>
+            {
+                allDoneTasks.map(singleDoneTask => <SingleDoneTask
+                    key={singleDoneTask._id}
+                    singleDoneTask={singleDoneTask}
+                ></SingleDoneTask>)
+            }
         </div>
     );
 };

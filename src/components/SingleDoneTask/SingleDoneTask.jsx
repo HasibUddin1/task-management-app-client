@@ -1,13 +1,13 @@
 
 
-const SingleOnHoldTask = ({ singleOnHoldTask }) => {
+const SingleDoneTask = ({ singleDoneTask }) => {
 
-    const { taskTitle, taskStatus, taskDescription } = singleOnHoldTask
+    const { taskTitle, taskStatus, taskDescription } = singleDoneTask
 
     return (
         <div className="card w-96 bg-base-100 shadow-xl">
             <div className="card-body">
-                <h2 className="card-title text-fuchsia-500 font-semibold">{taskTitle}</h2>
+                <h2 className="card-title text-green-500 font-semibold">{taskTitle}</h2>
                 <p>{taskDescription}</p>
                 <p className="font-semibold text-lg">Status: {taskStatus}</p>
                 <div className="card-actions justify-end">
@@ -19,4 +19,4 @@ const SingleOnHoldTask = ({ singleOnHoldTask }) => {
     );
 };
 
-export default SingleOnHoldTask;
+export default SingleDoneTask;
