@@ -50,7 +50,7 @@ const UpdateATask = () => {
     }
 
     return (
-        <div className="mt-10 p-10">
+        <div className="p-20 bg-slate-200 h-screen">
             <form onSubmit={handleUpdateTask}>
                 <div className="flex gap-10">
                     <div className="w-1/2">

@@ -8,7 +8,7 @@ const Main = () => {
             <div className="w-[15%]">
                 <NavigationBar></NavigationBar>
             </div>
-            <div className="w-[85%] bg-slate-200 h-screen">
+            <div className="w-[85%]">
                 <Outlet></Outlet>
             </div>
         </div>

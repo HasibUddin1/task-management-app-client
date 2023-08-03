@@ -22,7 +22,7 @@ const Home = () => {
     const allArchivedTasks = allTasks.filter(task => task.taskStatus === 'Archived')
 
     return (
-        <div className="flex gap-10 px-10">
+        <div className={allDoingTasks.length > 3 || allOnHoldTasks.length > 3 || allDoneTasks.length > 3 || allArchivedTasks.length > 3 ? 'flex gap-10 px-10 mb-10' : 'flex gap-10 px-10 mb-10 h-screen'}>
             {/* All Doing Tasks Section */}
             <div className="w-1/4">
                 <h1 className="text-blue-500 font-bold text-2xl border-t-4 border-blue-500 text-center mt-10">Doing</h1>
