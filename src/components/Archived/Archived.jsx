@@ -4,6 +4,8 @@ import SingleArchivedTask from "../SingleArchivedTask/SingleArchivedTask";
 
 const Archived = () => {
 
+    // TODO: add a message if no task is listed
+
     const [allArchivedTasks, setAllArchivedTasks] = useState([])
 
     useEffect(() => {
@@ -18,6 +20,8 @@ const Archived = () => {
                 allArchivedTasks.map(singleArchivedTask => <SingleArchivedTask
                     key={singleArchivedTask._id}
                     singleArchivedTask={singleArchivedTask}
+                    allArchivedTasks={allArchivedTasks}
+                    setAllArchivedTasks={setAllArchivedTasks}
                 ></SingleArchivedTask>)
             }
         </div>

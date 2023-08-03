@@ -4,6 +4,8 @@ import SingleOnHoldTask from "../SingleOnHoldTask/SingleOnHoldTask";
 
 const OnHold = () => {
 
+    // TODO: add a message if no task is listed
+
     const [allOnHoldTasks, setAllOnHoldTasks] = useState([])
 
     useEffect(() => {
@@ -18,6 +20,8 @@ const OnHold = () => {
                 allOnHoldTasks.map(singleOnHoldTask => <SingleOnHoldTask
                     key={singleOnHoldTask._id}
                     singleOnHoldTask={singleOnHoldTask}
+                    allOnHoldTasks={allOnHoldTasks}
+                    setAllOnHoldTasks={setAllOnHoldTasks}
                 ></SingleOnHoldTask>)
             }
         </div>

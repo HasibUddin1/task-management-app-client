@@ -51,6 +51,7 @@ const AddTask = () => {
                         icon: 'success',
                         confirmButtonText: 'Ok'
                     })
+                    form.reset()
                 }
             })
     }

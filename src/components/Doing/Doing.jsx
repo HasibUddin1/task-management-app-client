@@ -4,6 +4,8 @@ import SingleDoingTask from "../SingleDoingTask.jsx/SingleDoingTask";
 
 const Doing = () => {
 
+    // TODO: add a message if no task is listed
+
     const [allDoingTasks, setAllDoingTasks] = useState([])
 
     useEffect(() => {
@@ -17,6 +19,8 @@ const Doing = () => {
             {allDoingTasks.map(singleDoingTask => <SingleDoingTask
                 key={singleDoingTask._id}
                 singleDoingTask={singleDoingTask}
+                allDoingTasks={allDoingTasks}
+                setAllDoingTasks={setAllDoingTasks}
             ></SingleDoingTask>)}
         </div>
     );
