@@ -15,9 +15,9 @@ const Done = () => {
     }, [])
 
     return (
-        <div className={allDoneTasks.length > 9 ? 'bg-slate-200' : 'bg-slate-200 h-screen'}>
+        <div className={allDoneTasks.length > 9 ? 'lg:bg-slate-200' : 'lg:bg-slate-200 h-screen'}>
             {allDoneTasks.length === 0 && <h1 className="text-4xl font-bold text-center text-green-500 pt-10">You did not selected any done task</h1>}
-            <div className="w-9/12 mx-auto grid grid-cols-3 py-10 gap-10">
+            <div className="lg:w-9/12 mx-auto grid lg:grid-cols-3 py-10 gap-10 px-5 lg:px-0">
                 {
                     allDoneTasks.map(singleDoneTask => <SingleDoneTask
                         key={singleDoneTask._id}

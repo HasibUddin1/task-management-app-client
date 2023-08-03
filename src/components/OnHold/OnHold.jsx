@@ -15,9 +15,9 @@ const OnHold = () => {
     }, [])
 
     return (
-        <div className={allOnHoldTasks.length> 9 ? 'bg-slate-200' : 'bg-slate-200 h-screen'}>
+        <div className={allOnHoldTasks.length> 9 ? 'lg:bg-slate-200' : 'lg:bg-slate-200 h-screen'}>
             {allOnHoldTasks.length === 0 && <h1 className="text-4xl font-bold text-center text-fuchsia-500 pt-10">You did not selected any on hold task</h1>}
-            <div className="w-9/12 mx-auto grid grid-cols-3 py-10 gap-10">
+            <div className="lg:w-9/12 mx-auto grid lg:grid-cols-3 py-10 gap-10 px-5 lg:px-0">
                 {
                     allOnHoldTasks.map(singleOnHoldTask => <SingleOnHoldTask
                         key={singleOnHoldTask._id}
