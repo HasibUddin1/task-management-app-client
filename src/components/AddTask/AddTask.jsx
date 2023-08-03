@@ -1,8 +1,11 @@
 import { useState } from "react";
 import Swal from "sweetalert2";
+import useTitle from "../../hooks/useTitle";
 
 
 const AddTask = () => {
+
+    useTitle('Add A Task')
 
     const [error, setError] = useState('')
 

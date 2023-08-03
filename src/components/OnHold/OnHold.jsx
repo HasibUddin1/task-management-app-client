@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import SingleOnHoldTask from "../SingleOnHoldTask/SingleOnHoldTask";
+import useTitle from "../../hooks/useTitle";
 
 
 const OnHold = () => {
 
-    // TODO: add a message if no task is listed
+    useTitle('On Hold')
 
     const [allOnHoldTasks, setAllOnHoldTasks] = useState([])
 

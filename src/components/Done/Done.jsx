@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import SingleDoneTask from "../SingleDoneTask/SingleDoneTask";
+import useTitle from "../../hooks/useTitle";
 
 
 const Done = () => {
 
-    // TODO: add a message if no task is listed
+    useTitle('Done')
 
     const [allDoneTasks, setAllDoneTasks] = useState([])
 

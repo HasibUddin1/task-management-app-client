@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import SingleArchivedTask from "../SingleArchivedTask/SingleArchivedTask";
+import useTitle from "../../hooks/useTitle";
 
 
 const Archived = () => {
 
-    // TODO: add a message if no task is listed
+    useTitle('Archived')
 
     const [allArchivedTasks, setAllArchivedTasks] = useState([])
 

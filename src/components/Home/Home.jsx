@@ -3,10 +3,13 @@ import SingleDoingTask from "../SingleDoingTask.jsx/SingleDoingTask";
 import SingleOnHoldTask from "../SingleOnHoldTask/SingleOnHoldTask";
 import SingleDoneTask from "../SingleDoneTask/SingleDoneTask";
 import SingleArchivedTask from "../SingleArchivedTask/SingleArchivedTask";
+import useTitle from "../../hooks/useTitle";
 
 
 
 const Home = () => {
+
+    useTitle('Home')
 
     const [allTasks, setAllTasks] = useState([])
 
