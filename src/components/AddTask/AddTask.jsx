@@ -66,10 +66,10 @@ const AddTask = () => {
                     <div className="w-1/2">
                         <label className="text-xl font-semibold" htmlFor="taskStatus">Task Status</label>
                         <select className="w-full px-4 py-2 rounded-lg block mt-2" name="taskStatus" id="taskStatus">
-                            <option value="doing">Doing</option>
-                            <option value="onHold">On Hold</option>
-                            <option value="done">Done</option>
-                            <option value="archived">Archived</option>
+                            <option value="Doing">Doing</option>
+                            <option value="On Hold">On Hold</option>
+                            <option value="Done">Done</option>
+                            <option value="Archived">Archived</option>
                         </select>
                     </div>
                 </div>

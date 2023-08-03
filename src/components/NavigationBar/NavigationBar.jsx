@@ -13,33 +13,33 @@ const NavigationBar = () => {
             </div>
             <NavLink className={({ isActive }) =>
                 isActive
-                    ? "text-fuchsia-500 border-l-2 border-fuchsia-500 w-fit px-4 py-1"
-                    : "hover:text-fuchsia-500 hover:border-l-2 border-fuchsia-500 ease-in-out duration-200 w-fit px-4 py-1"
+                    ? "text-fuchsia-500 border-l-4 border-fuchsia-500 w-fit px-4 py-1"
+                    : "hover:text-fuchsia-500 hover:border-l-4 border-fuchsia-500 ease-in-out duration-200 w-fit px-4 py-1"
             } to='/'>Home</NavLink>
             <NavLink className={({ isActive }) =>
                 isActive
-                    ? "text-fuchsia-500 border-l-2 border-fuchsia-500 w-fit px-4 py-1"
-                    : "hover:text-fuchsia-500 hover:border-l-2 border-fuchsia-500 ease-in-out duration-200 w-fit px-4 py-1"
+                    ? "text-fuchsia-500 border-l-4 border-fuchsia-500 w-fit px-4 py-1"
+                    : "hover:text-fuchsia-500 hover:border-l-4 border-fuchsia-500 ease-in-out duration-200 w-fit px-4 py-1"
             } to='/doing'>Doing</NavLink>
             <NavLink className={({ isActive }) =>
                 isActive
-                    ? "text-fuchsia-500 border-l-2 border-fuchsia-500 w-fit px-4 py-1"
-                    : "hover:text-fuchsia-500 hover:border-l-2 border-fuchsia-500 ease-in-out duration-200 w-fit px-4 py-1"
+                    ? "text-fuchsia-500 border-l-4 border-fuchsia-500 w-fit px-4 py-1"
+                    : "hover:text-fuchsia-500 hover:border-l-4 border-fuchsia-500 ease-in-out duration-200 w-fit px-4 py-1"
             } to='/onHold'>On Hold</NavLink>
             <NavLink className={({ isActive }) =>
                 isActive
-                    ? "text-fuchsia-500 border-l-2 border-fuchsia-500 w-fit px-4 py-1"
-                    : "hover:text-fuchsia-500 hover:border-l-2 border-fuchsia-500 ease-in-out duration-200 w-fit px-4 py-1"
+                    ? "text-fuchsia-500 border-l-4 border-fuchsia-500 w-fit px-4 py-1"
+                    : "hover:text-fuchsia-500 hover:border-l-4 border-fuchsia-500 ease-in-out duration-200 w-fit px-4 py-1"
             } to='/done'>Done</NavLink>
             <NavLink className={({ isActive }) =>
                 isActive
-                    ? "text-fuchsia-500 border-l-2 border-fuchsia-500 w-fit px-4 py-1"
-                    : "hover:text-fuchsia-500 hover:border-l-2 border-fuchsia-500 ease-in-out duration-200 w-fit px-4 py-1"
+                    ? "text-fuchsia-500 border-l-4 border-fuchsia-500 w-fit px-4 py-1"
+                    : "hover:text-fuchsia-500 hover:border-l-4 border-fuchsia-500 ease-in-out duration-200 w-fit px-4 py-1"
             } to='/archived'>Archived</NavLink>
             <NavLink className={({ isActive }) =>
                 isActive
-                    ? "text-fuchsia-500 border-l-2 border-fuchsia-500 w-fit px-4 py-1"
-                    : "hover:text-fuchsia-500 hover:border-l-2 border-fuchsia-500 ease-in-out duration-200 w-fit px-4 py-1"
+                    ? "text-fuchsia-500 border-l-4 border-fuchsia-500 w-fit px-4 py-1"
+                    : "hover:text-fuchsia-500 hover:border-l-4 border-fuchsia-500 ease-in-out duration-200 w-fit px-4 py-1"
             } to='/addTask'>Add Task</NavLink>
         </div>
     );
