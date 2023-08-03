@@ -1,9 +1,52 @@
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import Swal from "sweetalert2";
 
 
 const UpdateATask = () => {
 
-    const handleUpdateTask = () => {
-        
+    const { id } = useParams()
+
+    const [selectedTask, setSelectedTask] = useState({})
+
+    useEffect(() => {
+        fetch(`http://localhost:5000/getSingleTask/${id}`)
+            .then(res => res.json())
+            .then(data => setSelectedTask(data))
+    }, [id])
+
+    const handleUpdateTask = event => {
+        event.preventDefault()
+
+        const form = event.target
+        const taskTitle = form.taskTitle.value
+        const taskStatus = form.taskStatus.value
+        const taskDescription = form.taskDescription.value
+
+        const updatedTask = {
+            taskTitle,
+            taskStatus,
+            taskDescription
+        }
+        fetch(`http://localhost:5000/updateATask/${id}`, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(updatedTask)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.modifiedCount > 0) {
+                    Swal.fire({
+                        title: 'Success',
+                        text: 'You have successfully updated the task',
+                        icon: 'success',
+                        confirmButtonText: 'Ok'
+                    })
+                    form.reset()
+                }
+            })
     }
 
     return (
@@ -12,7 +55,7 @@ const UpdateATask = () => {
                 <div className="flex gap-10">
                     <div className="w-1/2">
                         <label className="text-xl font-semibold" htmlFor="taskTitle">Task Title</label>
-                        <input className="w-full px-4 py-2 rounded-lg block mt-2" type="text" name="taskTitle" id="taskTitle" placeholder="Task Title" />
+                        <input defaultValue={selectedTask?.taskTitle} className="w-full px-4 py-2 rounded-lg block mt-2" type="text" name="taskTitle" id="taskTitle" placeholder="Task Title" />
                     </div>
                     <div className="w-1/2">
                         <label className="text-xl font-semibold" htmlFor="taskStatus">Task Status</label>
@@ -26,10 +69,10 @@ const UpdateATask = () => {
                 </div>
                 <div className="mt-5">
                     <label className="text-xl font-semibold" htmlFor="taskDescription">Task Description</label>
-                    <textarea style={{ resize: 'none' }} className="block px-4 py-2 rounded-md w-full mt-2" name="taskDescription" id="taskDescription" cols="30" rows="5" placeholder="Task Description"></textarea>
+                    <textarea defaultValue={selectedTask?.taskDescription} style={{ resize: 'none' }} className="block px-4 py-2 rounded-md w-full mt-2" name="taskDescription" id="taskDescription" cols="30" rows="5" placeholder="Task Description"></textarea>
                 </div>
                 <div className="mt-5">
-                    <input className="btn btn-success font-bold w-full" type="submit" value="Add Task" />
+                    <input className="btn btn-success font-bold w-full" type="submit" value="Update Task" />
                 </div>
                 {/* {error && <p className="text-red-500 font-semibold">{error}</p>} */}
             </form>

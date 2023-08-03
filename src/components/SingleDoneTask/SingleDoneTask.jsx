@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 
@@ -28,12 +29,12 @@ const SingleDoneTask = ({ singleDoneTask, allDoneTasks, setAllDoneTasks, allTask
                                 'success'
                             )
 
-                            if(allDoneTasks){
+                            if (allDoneTasks) {
                                 const remaining = allDoneTasks.filter(task => task._id !== id)
                                 setAllDoneTasks(remaining)
                             }
 
-                            if(allTasks){
+                            if (allTasks) {
                                 const remaining = allTasks.filter(task => task._id !== id)
                                 setAllTasks(remaining)
                             }
@@ -51,7 +52,7 @@ const SingleDoneTask = ({ singleDoneTask, allDoneTasks, setAllDoneTasks, allTask
                 <p>{taskDescription}</p>
                 <p className="font-semibold text-lg">Status: {taskStatus}</p>
                 <div className="card-actions justify-end">
-                    <button className="btn btn-info">Update</button>
+                    <Link to={`/updateATask/${_id}`}><button className="btn btn-info">Update</button></Link>
                     <button onClick={() => handleDeleteTask(_id)} className="btn btn-error">Delete</button>
                 </div>
             </div>

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 
@@ -51,7 +52,7 @@ const SingleDoingTask = ({ singleDoingTask, allDoingTasks, setAllDoingTasks, all
                 <p>{taskDescription}</p>
                 <p className="font-semibold text-lg">Status: {taskStatus}</p>
                 <div className="card-actions justify-end">
-                    <button className="btn btn-info">Update</button>
+                    <Link to={`/updateATask/${_id}`}><button className="btn btn-info">Update</button></Link>
                     <button onClick={() => handleDeleteTask(_id)} className="btn btn-error">Delete</button>
                 </div>
             </div>
