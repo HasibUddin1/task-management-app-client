@@ -31,6 +31,8 @@ const Home = () => {
                         allDoingTasks.map(singleDoingTask => <SingleDoingTask
                             key={singleDoingTask._id}
                             singleDoingTask={singleDoingTask}
+                            allTasks={allTasks}
+                            setAllTasks={setAllTasks}
                         ></SingleDoingTask>)
                     }
                 </div>
@@ -43,6 +45,8 @@ const Home = () => {
                         allOnHoldTasks.map(singleOnHoldTask => <SingleOnHoldTask
                             key={singleOnHoldTask._id}
                             singleOnHoldTask={singleOnHoldTask}
+                            allTasks={allTasks}
+                            setAllTasks={setAllTasks}
                         ></SingleOnHoldTask>)
                     }
                 </div>
@@ -55,6 +59,8 @@ const Home = () => {
                         allDoneTasks.map(singleDoneTask => <SingleDoneTask
                             key={singleDoneTask._id}
                             singleDoneTask={singleDoneTask}
+                            allTasks={allTasks}
+                            setAllTasks={setAllTasks}
                         ></SingleDoneTask>)
                     }
                 </div>
@@ -67,6 +73,8 @@ const Home = () => {
                         allArchivedTasks.map(singleArchivedTask => <SingleArchivedTask
                             key={singleArchivedTask._id}
                             singleArchivedTask={singleArchivedTask}
+                            allTasks={allTasks}
+                            setAllTasks={setAllTasks}
                         ></SingleArchivedTask>)
                     }
                 </div>

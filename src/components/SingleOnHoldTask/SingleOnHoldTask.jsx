@@ -1,7 +1,7 @@
 import Swal from "sweetalert2";
 
 
-const SingleOnHoldTask = ({ singleOnHoldTask, allOnHoldTasks, setAllOnHoldTasks }) => {
+const SingleOnHoldTask = ({ singleOnHoldTask, allOnHoldTasks, setAllOnHoldTasks, allTasks, setAllTasks }) => {
 
     const { _id, taskTitle, taskStatus, taskDescription } = singleOnHoldTask
 
@@ -27,8 +27,15 @@ const SingleOnHoldTask = ({ singleOnHoldTask, allOnHoldTasks, setAllOnHoldTasks 
                                 'Your file has been deleted.',
                                 'success'
                             )
-                            const remaining = allOnHoldTasks.filter(task => task._id !== id)
-                            setAllOnHoldTasks(remaining)
+                            if(allOnHoldTasks){
+                                const remaining = allOnHoldTasks.filter(task => task._id !== id)
+                                setAllOnHoldTasks(remaining)
+                            }
+
+                            if(allTasks){
+                                const remaining = allTasks.filter(task => task._id !== id)
+                                setAllTasks(remaining)
+                            }
                         }
                     })
             }

@@ -1,7 +1,7 @@
 import Swal from "sweetalert2";
 
 
-const SingleDoneTask = ({ singleDoneTask, allDoneTasks, setAllDoneTasks }) => {
+const SingleDoneTask = ({ singleDoneTask, allDoneTasks, setAllDoneTasks, allTasks, setAllTasks }) => {
 
     const { _id, taskTitle, taskStatus, taskDescription } = singleDoneTask
 
@@ -28,9 +28,15 @@ const SingleDoneTask = ({ singleDoneTask, allDoneTasks, setAllDoneTasks }) => {
                                 'success'
                             )
 
-                            const remaining = allDoneTasks.filter(task => task._id !== id)
+                            if(allDoneTasks){
+                                const remaining = allDoneTasks.filter(task => task._id !== id)
+                                setAllDoneTasks(remaining)
+                            }
 
-                            setAllDoneTasks(remaining)
+                            if(allTasks){
+                                const remaining = allTasks.filter(task => task._id !== id)
+                                setAllTasks(remaining)
+                            }
                         }
                     })
             }

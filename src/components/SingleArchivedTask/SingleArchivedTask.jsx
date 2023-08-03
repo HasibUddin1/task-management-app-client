@@ -1,7 +1,7 @@
 import Swal from "sweetalert2";
 
 
-const SingleArchivedTask = ({ singleArchivedTask, allArchivedTasks, setAllArchivedTasks }) => {
+const SingleArchivedTask = ({ singleArchivedTask, allArchivedTasks, setAllArchivedTasks, allTasks, setAllTasks }) => {
 
     const { _id, taskTitle, taskStatus, taskDescription } = singleArchivedTask
 
@@ -27,8 +27,15 @@ const SingleArchivedTask = ({ singleArchivedTask, allArchivedTasks, setAllArchiv
                                 'Your file has been deleted.',
                                 'success'
                             )
-                            const remaining = allArchivedTasks.filter(task => task._id !== id)
-                            setAllArchivedTasks(remaining)
+                            if (allArchivedTasks) {
+                                const remaining = allArchivedTasks.filter(task => task._id)
+                                setAllArchivedTasks(remaining)
+                            }
+
+                            if (allTasks) {
+                                const remaining = allTasks.filter(task => task._id !== id)
+                                setAllTasks(remaining)
+                            }
                         }
                     })
             }

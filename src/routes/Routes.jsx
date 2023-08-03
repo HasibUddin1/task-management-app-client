@@ -8,6 +8,7 @@ import OnHold from "../components/OnHold/OnHold";
 import Done from "../components/Done/Done";
 import Archived from "../components/Archived/Archived";
 import AddTask from "../components/AddTask/AddTask";
+import UpdateATask from "../components/UpdateATask/UpdateATask";
 
 const router = createBrowserRouter([
     {
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
             {
                 path: 'addTask',
                 element: <AddTask></AddTask>
+            },
+            {
+                path: 'updateATask',
+                element: <UpdateATask></UpdateATask>
             }
         ]
     }
